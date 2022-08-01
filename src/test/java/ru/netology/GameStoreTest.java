@@ -23,6 +23,7 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game3));
         assertTrue(store.containsGame(game4));
     }
+
     @Test
     public void shouldAllAddGameFalse() {
         assertTrue(store.containsGame(game1));
@@ -30,6 +31,23 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game3));
         assertTrue(store.containsGame(game4));
         assertFalse(store.containsGame(null));
+    }
+
+    @Test
+    public void ShouldGetMostPlayer() {
+
+        GameStore store = new GameStore();
+
+        Game game = store.publishGame("Майн Крафт", "выживание");
+
+        store.addPlayTime("1", 10);
+        store.addPlayTime("1", 30);
+        store.addPlayTime("2", 30);
+
+        String expected = "1";
+        String actual = store.getMostPlayer();
+
+        assertEquals(expected, actual);
     }
 
 
