@@ -23,6 +23,16 @@ public class GameStoreTest {
         assertTrue(store.containsGame(game3));
         assertTrue(store.containsGame(game4));
     }
+    @Test
+    public void shouldAllAddGameFalse() {
+        assertTrue(store.containsGame(game1));
+        assertTrue(store.containsGame(game2));
+        assertTrue(store.containsGame(game3));
+        assertTrue(store.containsGame(game4));
+        assertFalse(store.containsGame(null));
+    }
+
+
 
     // другие ваши тесты
 }
