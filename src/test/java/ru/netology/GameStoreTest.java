@@ -1,6 +1,7 @@
 package ru.netology;
 
 import static org.junit.jupiter.api.Assertions.*;
+
 import org.junit.jupiter.api.Test;
 
 public class GameStoreTest {
@@ -9,18 +10,19 @@ public class GameStoreTest {
     Game game2 = store.publishGame("Танки", "Стратегии");
     Game game3 = store.publishGame("Нетология Баттл Онлайн", "Аркады");
     Game game4 = store.publishGame("Симсы", "Симулятор");
-    Game game5 = store.publishGame("Контра", "Шутер");
 
     @Test
     public void shouldAddGame() {
-
-        GameStore store = new GameStore();
-        Game game = store.publishGame("Нетология Баттл Онлайн", "Аркады");
-
-        assertTrue(store.containsGame(game));
+        assertTrue(store.containsGame(game1));
     }
 
-
+    @Test
+    public void shouldAllAddGame() {
+        assertTrue(store.containsGame(game1));
+        assertTrue(store.containsGame(game2));
+        assertTrue(store.containsGame(game3));
+        assertTrue(store.containsGame(game4));
+    }
 
     // другие ваши тесты
 }
